@@ -58,10 +58,12 @@
     <form action="/send-message" method="POST">
         <span>Leave a Message</span>
         <h2>We love to hear from you</h2>
-        <input name="name" type="text" placeholder="Your Name" autocomplete="off">
-        <input name="email" type="text" placeholder="E-mail" autocomplete="off">
-        <input name="subject" type="text" placeholder="Subject" autocomplete="off">
-        <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" autocomplete="off"></textarea>
+        <input name="name" type="text" placeholder="Your Name" autocomplete="off" required>
+        <input name="email" type="text" placeholder="E-mail" autocomplete="off" required>
+        <input name="subject" type="text" placeholder="Subject" autocomplete="off" required>
+        <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" autocomplete="off" required></textarea>
         <button class="normal">Submit</button>
     </form>
 </section>
+
+

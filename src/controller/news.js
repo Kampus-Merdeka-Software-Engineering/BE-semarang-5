@@ -1,3 +1,4 @@
+const Swal = require('sweetalert2')
 const newsModel = require('../models/news');
 
 // const getAllEmail = async (req, res) =>{
@@ -21,8 +22,9 @@ const addEmail = async (req, res)=>{
         // res.status(201).json({
         //     message: 'CREATE new user success',    
         //     data : body
-        // });
+        // })
         res.redirect('back');
+        
     } catch(error){
         res.status(500).json({
             message: 'Server Error',
