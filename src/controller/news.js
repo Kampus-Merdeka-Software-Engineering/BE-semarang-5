@@ -1,4 +1,3 @@
-const Swal = require('sweetalert2')
 const newsModel = require('../models/news');
 
 // const getAllEmail = async (req, res) =>{

@@ -6,11 +6,23 @@
     <!-- note : postman work but form not -->
     <form action="/get-news-letter" method="POST" class="form">
         <input id="email" name="email" type="text" placeholder="Your E-mail address" autocomplete="off" required>
-        <button class="normal">Sign up</button>
+        <button class="normal" id="validateButton">Sign up</button>
     </form>
 </section>
 
 <!-- validasi format email -->
 <script>
-    
+    document.getElementById("validateButton").addEventListener("click", function() {validateEmail();});
+
+    function validateEmail() {
+        const emailInput = document.getElementById("email");
+        const email = emailInput.value;
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+        if (emailRegex.test(email)) {
+            alert("Success. You will receive news letter!");
+        } else {
+            alert("Email is not valid. Please enter a valid email address.");
+        }
+    }
 </script>

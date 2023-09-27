@@ -3,8 +3,6 @@ const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const {addEmail, sendMessage, contactPage, aboutPage, homePage} = require('./controller/news');
 const bodyParser = require('body-parser');
-// const Swal = require('sweetalert2')
-const {body, validationResult, check} = require('express-validator');
 
 app.set('views', 'src/views');
 app.set('view engine', 'ejs');
@@ -17,7 +15,7 @@ app.use(bodyParser.json())              // parse application/json
 app.get('/', homePage);
 app.get('/about', aboutPage);
 app.get('/contact', contactPage);
-app.post('/get-news-letter', [check('email', 'Email tidak valid!').isEmail()], addEmail);
+app.post('/get-news-letter', addEmail);
 app.post('/send-message', sendMessage);
 
 app.listen(4000, ()=>{
