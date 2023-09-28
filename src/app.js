@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
-const {addEmail, sendMessage, contactPage, aboutPage, homePage} = require('./controller/news');
+const {addEmail, sendMessage, contactPage, aboutPage, homePage, routeHandling} = require('./controller/news');
 const bodyParser = require('body-parser');
 
 app.set('views', 'src/views');
@@ -17,6 +17,8 @@ app.get('/about', aboutPage);
 app.get('/contact', contactPage);
 app.post('/get-news-letter', addEmail);
 app.post('/send-message', sendMessage);
+
+app.use('/', routeHandling);
 
 app.listen(4000, ()=>{
     console.log(`start listening port 4000 ...`);

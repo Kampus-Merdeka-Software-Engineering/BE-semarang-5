@@ -18,11 +18,11 @@ const addEmail = async (req, res)=>{
     const {body} = req;
     try{
         await newsModel.addEmail(body);
-        // res.status(201).json({
-        //     message: 'CREATE new user success',    
-        //     data : body
-        // })
-        res.redirect('back');
+        res.status(201).json({
+            message: 'Email has been sent',    
+            data : body
+        })
+        // res.redirect('back');
         
     } catch(error){
         res.status(500).json({
@@ -36,11 +36,11 @@ const sendMessage = async (req, res)=>{
     const {body} = req;
     try{
         await newsModel.sendMessage(body);
-        // res.status(201).json({
-        //     message: 'CREATE new user success',    
-        //     data : body
-        // });
-        res.redirect('back');
+        res.status(201).json({
+            message: 'Message has been sent',    
+            data : body
+        });
+        // res.redirect('back');
     } catch(error){
         res.status(500).json({
             message: 'Server Error',
@@ -69,4 +69,10 @@ const contactPage = (req, res) => {
         layout: 'layouts/main-layout',
     });
 };
-module.exports = {addEmail, sendMessage, contactPage, aboutPage, homePage};
+
+const routeHandling = (req, res) => {
+    res.status(404);
+    res.send('<h1>404</h1>');
+}
+
+module.exports = {addEmail, sendMessage, contactPage, aboutPage, homePage, routeHandling};
