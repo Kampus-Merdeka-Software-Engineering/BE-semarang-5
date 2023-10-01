@@ -1,3 +1,5 @@
+require('dotenv').config();
+const PORT = process.env.PORT || 5000;
 const express = require('express');
 const app = express();
 const expressLayouts = require('express-ejs-layouts');
@@ -20,6 +22,6 @@ app.post('/send-message', sendMessage);
 
 app.use('/', routeHandling);
 
-app.listen(4000, ()=>{
-    console.log(`start listening port 4000 ...`);
+app.listen(PORT, ()=>{
+    console.log(`start listening port ${PORT} ...`);
 });
