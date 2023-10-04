@@ -55,30 +55,14 @@
 </section>
 
 <section id="form-details">
-    <form action="/send-message" method="POST">
+    <form action="/send-message" method="POST" id="myForm">
         <span>Leave a Message</span>
         <h2>We love to hear from you</h2>
         <input name="name" type="text" placeholder="Your Name" autocomplete="off" required>
-        <input id="email" name="email" type="text" placeholder="E-mail" autocomplete="off" required>
+        <input id="email-message" name="email" type="email" placeholder="E-mail" autocomplete="off" required>
         <input name="subject" type="text" placeholder="Subject" autocomplete="off" required>
         <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" autocomplete="off" required></textarea>
-        <button class="normal" id="validateButton">Submit</button>
+        <button class="normal" id="validateButton2">Submit</button>
     </form>
 </section>
 
-<!-- validasi format email -->
-<!-- <script>
-    document.getElementById("validateButton").addEventListener("click", function() {validateEmail();});
-
-    function validateEmail() {
-        const emailInput = document.getElementById("email");
-        const email = emailInput.value;
-        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-
-        if (emailRegex.test(email)) {
-            alert("Your message has been sent!");
-        } else {
-            alert("Email is not valid. Please enter a valid email address.");
-        }
-    }
-</script> -->
