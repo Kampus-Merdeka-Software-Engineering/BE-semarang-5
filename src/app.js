@@ -21,19 +21,10 @@ database.dbPool.connect( (error) =>{
     }
 })
 
-
-// app.use(express.json())
-app.use(bodyParser.urlencoded({ extended: false }))             // parse application/x-www-form-urlencoded 
-app.use(bodyParser.json())              // parse application/json 
+app.use(bodyParser.urlencoded({ extended: false }))       
+app.use(bodyParser.json())       
 
 app.post('/get-news-letter', addEmail);
 app.post('/send-message', sendMessage);
-
-//  get
 app.get('/produk', showProduk);
-
 app.use('/', routeHandling);
-
-// app.listen(PORT, ()=>{
-//     console.log(`start listening port ${PORT} ...`);
-// });
