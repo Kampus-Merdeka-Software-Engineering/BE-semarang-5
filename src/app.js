@@ -6,7 +6,7 @@ const cors = require('cors');
 
 app.use(cors());
 
-const {addEmail, sendMessage, homePage, routeHandling} = require('./controller/news');
+const {addEmail, sendMessage, routeHandling} = require('./controller/news');
 const {showProduk} = require('./controller/produk');
 const bodyParser = require('body-parser');
 const database = require('./config/database');
@@ -27,4 +27,4 @@ app.use(bodyParser.json())
 app.post('/get-news-letter', addEmail);
 app.post('/send-message', sendMessage);
 app.get('/produk', showProduk);
-app.use('/', routeHandling);
+// app.use('/', routeHandling);
